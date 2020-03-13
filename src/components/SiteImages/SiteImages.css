@@ -1,0 +1,34 @@
+.site-images{
+    position:relative;
+    border-width:2px;
+    width:80%;
+    height: 100%;
+    float: left;
+}
+
+.url-screenshoot-one{
+    position:relative;
+    border-width:2px;
+    width: 50%;
+    height:100px;
+    background-color: white;
+    float: left;
+    font-size: 15px;;
+}
+.url-screenshoot-one h3{
+    font-size: 1rem;
+}
+
+
+.url-screenshoot-second{
+    position:relative;
+    border-width:2px;
+    width: 50%;
+    height:100px;
+    background-color: white;
+    float: left;
+}
+
+.url-screenshoot-second h3{
+    font-size: 1rem;
+}
