@@ -31,7 +31,12 @@ export const Compare = ({ match }) => {
         };
     
         loadSites()
-      }, [match.params.id])
+      }, [match.params.id]);
+
+      const {Screnshots} = sites;
+      console.log(Screnshots);
+      const size = Screnshots && Screnshots.length;
+      console.log(size);
 
     return (
         <Container fluid>
@@ -40,21 +45,17 @@ export const Compare = ({ match }) => {
                     <div className="logo">
                         <img src="../logo-stage.png" alt="Logo" width="150px" />
                     </div>
-                    <h4>Comparador de sites </h4>
-                    <h2>12 Páginas Encontradas</h2>
+                    <h4>COMPARADOR DE SITES</h4>
+                    <h2><b>{size}</b> Páginas Encontradas</h2>
 
                 </div>
             </Row>
             <Row>
                 <div className="sidenav">
                     <p>Páginas</p>
-                    <a href="#inicial">Inicial</a>
-                    <a href="#hospedagem">Hospedagem</a>
-                    <a href="#convert">Convert</a>
-                    <a href="#fale com consultor">Fale com consultor</a>
-                    <a href="#criation">Criação de blog</a>
-                    <a href="#fale com consultor">Planos e preços</a>
-                    <a href="#fale com consultor">Clientes e resultados</a>
+                    {Screnshots && Screnshots.map(screenshot => (
+                      <a href="#page">{screenshot.pathName}</a>
+                    ))} 
                 </div>
                   <SiteImages key={sites._id} sites={sites}/>
             </Row>

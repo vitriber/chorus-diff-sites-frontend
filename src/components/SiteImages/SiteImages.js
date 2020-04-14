@@ -5,38 +5,32 @@ import './SiteImages.css';
 export function SiteImages({sites}){
 
     
-    const {pagesFirst} = sites;
+    const {Screnshots} = sites;
 
     console.log(sites);
-    
-    const size = pagesFirst && pagesFirst.length;
-
-    let rows = [];
-
-    for(let i=0; i<size; i++){
-        rows.push(
-            <div>
-                 <div className="name-page">
-                     <h4> Teste </h4>
-                 </div>
-                 <div className="url-screenshoot-one">
-                     <h3>{sites.pagesFirst[i]}</h3>
-                     <img src={sites.imagesFirst.url[i]} alt="Logo" width="150px" />
-                 </div>
-                 <div className="url-screenshoot-second">
-                     <h3>{sites.pagesFirst[i]}</h3>
-                     <img src={sites.imagesFirst.url[i]} alt="Logo" width="150px" />
-                 </div>
-            </div>
-        
-      )
-    }
-
-
+    console.log(Screnshots);
 
     return(
         <div className="site-images">
-               {rows}
+            {Screnshots && Screnshots.map(screenshot => (
+                <div>                
+                    <div className="name-page">
+                        <h4> {screenshot.pathName} </h4>
+                    </div>
+                    <div className="url-screenshoot-one">
+                        <a href={`${screenshot.sourceUrl}`}>
+                            <h3>{screenshot.sourceUrl}</h3>
+                        </a>
+                        <img src={screenshot.sourceImage} alt="Logo" width="150px" />
+                    </div>
+                    <div className="url-screenshoot-second">
+                        <a href={`${screenshot.targetUrl}`}>
+                            <h3>{screenshot.targetUrl}</h3>
+                        </a>
+                        <img src={screenshot.targetImage} alt="Logo" width="150px" />
+                    </div>
+                </div>
+            ))}  
         </div>
     );
 }

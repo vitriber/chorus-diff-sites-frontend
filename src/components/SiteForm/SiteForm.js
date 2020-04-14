@@ -5,20 +5,20 @@ import { Form, Button, Container, Col, Row } from 'react-bootstrap';
 import './SiteForm.css'
 
 export function SiteForm({onSubmit}){
-    const [linkFirst, setLinkFirst] = useState('');
-    const [linkSecond, setLinkSecond] = useState('');
+    const [SourceHostname, setSourceHostname] = useState('');
+    const [TargetHostname, setTargetHostname] = useState('');
   
 
     async function handleSubmit(e){
       e.preventDefault(); 
 
       await onSubmit({
-          linkFirst,
-          linkSecond,
+          SourceHostname,
+          TargetHostname,
         });
 
-        setLinkFirst('');
-        setLinkSecond('');
+        setSourceHostname('');
+        setTargetHostname('');
     }
 
     return(
@@ -31,8 +31,8 @@ export function SiteForm({onSubmit}){
                     <Form.Control 
                       type="text" 
                       placeholder="Entre com o primeiro link"
-                      value={linkFirst}
-                      onChange={e => setLinkFirst(e.target.value)} />
+                      value={SourceHostname}
+                      onChange={e => setSourceHostname(e.target.value)} />
                   </Form.Group>
 
                   <Form.Group controlId="formNoteFirst">
@@ -51,8 +51,8 @@ export function SiteForm({onSubmit}){
                     <Form.Control 
                       type="text" 
                       placeholder="Entre com o segundo link"
-                      value={linkSecond}
-                      onChange={e => setLinkSecond(e.target.value)} />
+                      value={TargetHostname}
+                      onChange={e => setTargetHostname(e.target.value)} />
                   </Form.Group>
 
                   <Form.Group controlId="formNoteFirst">

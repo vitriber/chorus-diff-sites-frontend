@@ -14,7 +14,7 @@ export const Main = (props) => {
 
   const addSite = async (data) => {
     setLoading(true);
-    alert('Links enviados: ' + data.linkFirst + data.linkSecond);
+    alert('Links enviados: ' + data.SourceHostname + data.TargetHostname);
 
     try {
       const response = await api.post('/link', data);

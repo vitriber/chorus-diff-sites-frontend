@@ -6,17 +6,31 @@
     float: left;
 }
 
+.name-page{
+    position: relative;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
 .url-screenshoot-one{
     position:relative;
     border-width:2px;
     width: 50%;
-    height:100px;
+    height:100%;
     background-color: white;
     float: left;
     font-size: 15px;;
 }
 .url-screenshoot-one h3{
     font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.url-screenshoot-one img {
+    background-size: 600px;
+    margin-left: 60px;
+    width: 50%;
 }
 
 
@@ -24,11 +38,18 @@
     position:relative;
     border-width:2px;
     width: 50%;
-    height:100px;
+    height:100%;
     background-color: white;
     float: left;
 }
 
 .url-screenshoot-second h3{
     font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.url-screenshoot-second img{
+    background-size: 600px;
+    margin-left: 60px;
+    width: 50%;
 }
