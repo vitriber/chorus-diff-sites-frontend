@@ -34,16 +34,7 @@ export function SiteForm({onSubmit}){
                       value={SourceHostname}
                       onChange={e => setSourceHostname(e.target.value)} />
                   </Form.Group>
-
-                  <Form.Group controlId="formNoteFirst">
-                    <Form.Label>Nota</Form.Label>
-                    <Form.Control type="text" placeholder="Nota" />
-                  </Form.Group>
-
-                  <Form.Group controlId="formSpeedFirst">
-                    <Form.Label>Indice de Velocidade</Form.Label>
-                    <Form.Control type="text" placeholder="Velocidade" />
-                  </Form.Group>   
+ 
                 </Col>
                 <Col xs="6" id="form-rate-sites">
                   <Form.Group controlId="formLinkSecond">
@@ -53,17 +44,7 @@ export function SiteForm({onSubmit}){
                       placeholder="Entre com o segundo link"
                       value={TargetHostname}
                       onChange={e => setTargetHostname(e.target.value)} />
-                  </Form.Group>
-
-                  <Form.Group controlId="formNoteFirst">
-                    <Form.Label>Nota</Form.Label>
-                    <Form.Control type="text" placeholder="Nota" />
-                  </Form.Group>
-
-                  <Form.Group controlId="formSpeedFirst">
-                    <Form.Label>Indice de Velocidade</Form.Label>
-                    <Form.Control type="text" placeholder="Velocidade" />
-                  </Form.Group>   
+                  </Form.Group>  
           </Col>
            </Row>
            <Button id="form-button" variant="primary" type="submit">

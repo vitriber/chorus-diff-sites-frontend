@@ -2,11 +2,12 @@ import React, {useEffect, useState} from 'react';
 import api from '../../services/api';
 
 
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import './Compare.css';
 
 import {SiteImages} from '../../components/SiteImages';
+import {Pagespeed} from '../../components/Pagespeed';
 
 
 export const Compare = ({ match }) => {
@@ -33,15 +34,19 @@ export const Compare = ({ match }) => {
         loadSites()
       }, [match.params.id]);
 
-      const {Screnshots} = sites;
-      console.log(Screnshots);
-      const size = Screnshots && Screnshots.length;
-      console.log(size);
 
+      const {Screnshots, SourceHostname, TargetHostname, SourceHostScore, TargetHostScore } = sites;
+      const size = Screnshots && Screnshots.length;
+  
     return (
         <Container fluid>
             <Row>
                 <div className="menu">
+                    <div className="back">
+                      <a href="/">
+                        <img src="../back.png" alt="back" width="50px" />
+                      </a>
+                    </div>
                     <div className="logo">
                         <img src="../logo-stage.png" alt="Logo" width="150px" />
                     </div>
@@ -51,13 +56,26 @@ export const Compare = ({ match }) => {
                 </div>
             </Row>
             <Row>
+              <Col sm={3}>
                 <div className="sidenav">
                     <p>Páginas</p>
                     {Screnshots && Screnshots.map(screenshot => (
                       <a href="#page">{screenshot.pathName}</a>
                     ))} 
                 </div>
-                  <SiteImages key={sites._id} sites={sites}/>
+              </Col>
+              <Col sm={9}>
+                  <Pagespeed 
+                    SourceHostScore={SourceHostScore} 
+                    TargetHostScore={TargetHostScore}
+                    SourceHostname= {SourceHostname}
+                    TargetHostname= {TargetHostname}/>
+                  <SiteImages sites={sites}/>
+              </Col>
+            </Row>
+            <Row>
+                <div className="footer">
+                </div>
             </Row>
         </Container>
     );

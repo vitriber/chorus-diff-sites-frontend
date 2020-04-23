@@ -1,3 +1,7 @@
+html, body{
+  height: 100%;
+}
+
 nav.sidebar :global(.navbar-brand) :global(.glyphicon) {
   margin-right: 0px;
 }
@@ -25,6 +29,11 @@ body {
     margin-left: 80px;
 }
 
+.back{
+  width: 50px;
+  height: 50px;
+}
+
 .logo{
   margin: 0 auto;
   width: 7%;
@@ -34,13 +43,12 @@ body {
 
 .sidenav {
   height: 100%;
-  width: 20%;
   position: relative;
   z-index: 1;
-  top: 0;
   left: 0;
   overflow-x: hidden;
   padding-top: 20px;
+  background-color:#F8F9FA;
 }
 
 .sidenav a {
@@ -78,4 +86,11 @@ nav {
   font-family: monospace;
   background: #2E69C9;
   transition: .3s;
+}
+
+.footer {
+  position: relative;
+  bottom: 0px;
+  width: 100px;
+  background-color: black;
 }
