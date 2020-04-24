@@ -14,7 +14,7 @@ export const Main = (props) => {
 
   const addSite = async (data) => {
     setLoading(true);
-    alert('Links enviados: ' + data.SourceHostname + data.TargetHostname);
+    alert('Dados enviados, aguarde por favor... ');
 
     try {
       const response = await api.post('/link', data);
@@ -24,7 +24,7 @@ export const Main = (props) => {
       props.history.push(`/compare/${_id}`);
       
     } catch (error) {
-      alert(`Error: ${error.message}`);
+      alert(`Ops, algo deu errado: ${error.message}`);
     } finally {
       setLoading(false);
     }
